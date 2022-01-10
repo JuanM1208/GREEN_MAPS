@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtAccesoLogin"
         android:layout_below="@+id/txtEncabezadoLogin"
-        android:text="Inicia sesión o regístrate, cambio aldo"
+        android:text="Inicia sesión o regístrate, cambio juanete"
         android:textSize="20dp"
         android:textAlignment="center"/>
 
