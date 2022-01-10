@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +8,119 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEncabezadoLogin"
+        android:layout_marginTop="30dp"
+        android:text="Bienvenido a Green Maps!"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAccesoLogin"
+        android:layout_below="@+id/txtEncabezadoLogin"
+        android:text="Inicia sesión o regístrate"
+        android:textSize="20dp"
+        android:textAlignment="center"/>
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/imageView_logo"
+        android:layout_marginTop="130dp"
+        app:srcCompat="@drawable/greenmaps_logo"
+        android:maxWidth="350dp"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLoginEmail"
+        android:layout_below="@+id/imageView_logo"
+        android:layout_marginHorizontal="30dp"
+        android:text="Email*"
+        android:padding="6dp"
+        android:textColor="#555555"
+        android:textSize="16sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgUser"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/txtLoginEmail"
+        app:srcCompat="@drawable/ic_user"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etLoginEmail"
+        android:layout_below="@+id/txtLoginEmail"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Ingresa tu email"
+        android:inputType="textEmailAddress"
+        android:padding="6dp"
+        android:textSize="16sp"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLoginPassword"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/etLoginEmail"
+        android:layout_marginHorizontal="30dp"
+        android:text="Contraseña*"
+        android:padding="6dp"
+        android:textColor="#555555"
+        android:textSize="16sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgPasswordVisibility"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/txtLoginPassword"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etLoginPassword"
+        android:layout_below="@+id/txtLoginPassword"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Ingresa tu contraseña"
+        android:inputType="textPassword"
+        android:padding="6dp"
+        android:textSize="16sp"
+        android:background="@drawable/border"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesión"
+        android:id="@+id/btnLogin"
+        android:layout_below="@+id/txtLoginPassword"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:elevation="10dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>
