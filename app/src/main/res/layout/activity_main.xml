@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/light_green">
 
     <TextView
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtAccesoLogin"
         android:layout_below="@+id/txtEncabezadoLogin"
-        android:text="Inicia sesión o regístrate, cambio juanete"
+        android:text="Inicia sesión o regístrate"
         android:textSize="20dp"
         android:textAlignment="center"/>
 
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtLoginEmail"
         android:layout_below="@+id/imageView_logo"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="25dp"
         android:text="Email*"
         android:padding="6dp"
         android:textColor="#555555"
@@ -76,7 +77,7 @@
         android:id="@+id/txtLoginPassword"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/etLoginEmail"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="25dp"
         android:text="Contraseña*"
         android:padding="6dp"
         android:textColor="#555555"
@@ -110,8 +111,30 @@
         android:id="@+id/btnLogin"
         android:layout_below="@+id/txtLoginPassword"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginLeft="70dp" />
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:backgroundTint="@color/dark_green"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtQuestion"
+        android:layout_below="@+id/btnLogin"
+        android:layout_marginTop="20dp"
+        android:text="¿No tienes una cuenta?"
+        android:textSize="15dp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regístrate"
+        android:id="@+id/btnRegistro"
+        android:layout_below="@+id/txtQuestion"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:backgroundTint="@color/dark_blue"/>
 
     <ProgressBar
         android:layout_width="wrap_content"
