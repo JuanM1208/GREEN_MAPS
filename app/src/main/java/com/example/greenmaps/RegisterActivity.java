@@ -46,8 +46,8 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
 
-        Button btnRegistro = findViewById(R.id.btnRegistro);
-        btnRegistro.setOnClickListener(new View.OnClickListener() {
+        Button btnEnviar = findViewById(R.id.btnEnviar);
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Obtener los datos ingresados
@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String confirmPassword = etConfirmPassword.getText().toString();
 
                 if (TextUtils.isEmpty(usuario)){
-                    Toast.makeText(RegisterActivity.this, "Por favor ingresa tu nombre completo", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Por favor ingresa tu nombre de usuario", Toast.LENGTH_LONG).show();
                     etUsuario.setError("Este campo es obligatorio");
                     etUsuario.requestFocus();
                 }
@@ -104,9 +104,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     //Registrar Usuario usando los datos ingresados
-    private void registrarUsuario(String usuario, String email, String password) {
+    private void registrarUsuario(String Usuario, String Email, String Password) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(RegisterActivity.this,
+        auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(RegisterActivity.this,
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -114,11 +114,11 @@ public class RegisterActivity extends AppCompatActivity {
                             FirebaseUser firebaseUser = auth.getCurrentUser();
 
                             //Actualizar nombre desplegable del usuario
-                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(usuario).build();
+                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(Usuario).build();
                             firebaseUser.updateProfile(profileChangeRequest);
 
                             //Guardar datos de usuario en la Realtime Database de Firebase
-                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(usuario, email);
+                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(Usuario, Email);
 
                             //Extrayendo referencia de Usuario desde la BD para "Regisrered Users"
                             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");

@@ -86,13 +86,23 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (TextUtils.isEmpty(loginPassword)){
                     Toast.makeText(MainActivity.this, "Por favor ingresa tu contraseña", Toast.LENGTH_SHORT).show();
-                    etLoginEmail.setError("Este campo es obligatorio");
-                    etLoginEmail.requestFocus();
+                    etLoginPassword.setError("Este campo es obligatorio");
+                    etLoginPassword.requestFocus();
                 }
                 else {
                     progressBar.setVisibility(View.VISIBLE);
                     loginUser(loginEmail, loginPassword);
                 }
+            }
+        });
+
+        //Abrir activity del Registro
+        Button btnRegistro = findViewById(R.id.btnRegistro);
+        btnRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }

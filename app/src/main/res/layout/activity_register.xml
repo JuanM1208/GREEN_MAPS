@@ -118,7 +118,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnRegisto"
+        android:id="@+id/btnEnviar"
         android:layout_below="@+id/etConfirmPassword"
         android:text="Enviar"
         android:layout_marginTop="15dp"
